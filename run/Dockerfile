@@ -30,4 +30,4 @@ COPY . .
 # Allow GUI forwarding (WSLg), because windows... they like it displayed at :0 specefically ...
 ENV DISPLAY=:0
 
-CMD ["python", "app.py"]
+CMD ["python", "src/app.py"]
