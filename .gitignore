@@ -1,1 +1,4 @@
+# used to prevent API key from sharing with GitHub
 .env
+# used to debug, not necessary for users
+venv
