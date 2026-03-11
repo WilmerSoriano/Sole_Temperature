@@ -1,3 +1,23 @@
+<!--
+    Source - https://stackoverflow.com/a/19403813
+    Posted by Thrawn, modified by community. See post 'Timeline' for change history
+    Retrieved 2026-03-10, License - CC BY-SA 4.0
+
+    NOTE TO SELF: WHY!!!????
+
+    For future consideration, this file help me generate a py file known as:
+    resources_rc.py 
+    which allowed me to import to app.py and get the correct path to background
+    image.
+    This was very lengthy and over engineering for no reason.
+    SRC: https://doc.qt.io/qt-6/resources.html
+
+    I can see the implimantion design behind this:
+    Given that multiple images exist, different path/directory
+    same with files, it can easily be located with this source, but 
+    1 image... idk.
+-->
+
 <RCC>
     <qresource prefix="/">
         <file>assets/bg.jpg</file>
