@@ -3,7 +3,7 @@ services:
     build: .
     image: sole_temperature
     env_file:
-      - ./src/.env
+      - .env
     environment:
       - DISPLAY=${DISPLAY}
       - QT+X11_NO_MITSHM=1
