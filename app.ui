@@ -1,3 +1,9 @@
+<--!
+	This UI file was generated using QT creator.
+	for more information, check out the official
+	Link: https://www.qt.io/development/tools/qt-creator-ide
+-->
+
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>MainWindow</class>
