@@ -1,4 +1,5 @@
 import sys
+import resources_rc
 from PyQt5 import QtCore, QtGui, QtWidgets
 from API import fetch_data
 
@@ -19,7 +20,7 @@ class Ui_MainWindow(object):
         self.picture = QtWidgets.QLabel(self.centralwidget)
         self.picture.setGeometry(QtCore.QRect(0, 0, 531, 611))
         self.picture.setText("")
-        self.picture.setPixmap(QtGui.QPixmap("bg.jpg"))
+        self.picture.setPixmap(QtGui.QPixmap(":/assets/bg.jpg"))
         self.picture.setScaledContents(True)
         self.picture.setObjectName("picture")
 
