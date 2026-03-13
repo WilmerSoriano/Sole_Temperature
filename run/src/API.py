@@ -26,14 +26,14 @@ def fetch_data():
     # using .env, call the variable name, keeping API Key a Secret
     API_KEY = os.getenv("OPEN_API_KEY")
 
-    URL = "https://api.openweathermap.org/data/2.5/weather"
+    URL = "https://api.openweathermap.org/data/2.5/weather" 
 
-    CALL = f"{URL}?q={CityName}&appid={API_KEY}&units=imperial"
+    CALL = f"{URL}?q={CityName}&appid={API_KEY}&units=imperial" # UPDATE: check if this data is valid
 
     response = requests.get(CALL)
 
     if response.status_code == 200:
-        data = response.json()
+        data = response.json() # UPDATE: how does json file works
 
         temp = float(data["main"]["temp"])
         h_temp = int(data["main"]["temp_max"]) 
