@@ -26,11 +26,12 @@ def fetch_data():
     # using .env, call the variable name, keeping API Key a Secret
     API_KEY = os.getenv("OPEN_API_KEY")
 
-    URL = "https://api.openweathermap.org/data/2.5/weather" 
+    URL = "https://api.openweathermap.org/data/2.5/weather" # UPDATE: for future reference, hide URL to prevent manipulation
 
     CALL = f"{URL}?q={CityName}&appid={API_KEY}&units=imperial"
 
     try:
+        # should return HTTP response if everything is correct
         response = requests.get(CALL, timeout=(3, 5)) # 3 sec MAX time to connect, 5 sec MAX time to wait for response
     except requests.exceptions.HTTPError as errh:
         print("HTTP Error:", errh.args[0])
@@ -42,7 +43,7 @@ def fetch_data():
         print("General Exception: Unknown error")
 
     if response.status_code == 200:
-        data = response.json() # UPDATE: how does json file works
+        data = response.json()
 
         temp = float(data["main"]["temp"])
         h_temp = int(data["main"]["temp_max"]) 
