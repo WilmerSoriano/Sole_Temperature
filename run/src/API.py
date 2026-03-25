@@ -9,7 +9,7 @@ def find_env():
         __file__ = Finds /run/src/api.py
         parent = /run/src
         parent.parent = /run and finds .env
-        etc...
+        parent.parent.etc...
     """
     # creates the path to .env file
     load_path = base_dir / ".env"
@@ -28,9 +28,18 @@ def fetch_data():
 
     URL = "https://api.openweathermap.org/data/2.5/weather" 
 
-    CALL = f"{URL}?q={CityName}&appid={API_KEY}&units=imperial" # UPDATE: check if this data is valid
+    CALL = f"{URL}?q={CityName}&appid={API_KEY}&units=imperial"
 
-    response = requests.get(CALL)
+    try:
+        response = requests.get(CALL, timeout=(3, 5)) # 3 sec MAX time to connect, 5 sec MAX time to wait for response
+    except requests.exceptions.HTTPError as errh:
+        print("HTTP Error:", errh.args[0])
+    except requests.exceptions.ReadTimeout as errrt:
+        print("Time out")
+    except requests.exceptions.ConnectionError as conerr:
+        print("Connection error")
+    except requests.exceptions.RequestException as errex:
+        print("General Exception: Unknown error")
 
     if response.status_code == 200:
         data = response.json() # UPDATE: how does json file works
