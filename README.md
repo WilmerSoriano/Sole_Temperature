@@ -31,7 +31,7 @@ A simple **desktop weather application** built using **PyQt** for the GUI and th
 
 ### ✅ Requirements
 - All OS devices: download Docker Desktop  
-- Windows OS: enable WSL2 in settings (for Windows)
+- Windows OS: enable WSL2 in settings (for Windows) Make sure to keep Docker Desktop running in background!
 - Linux OS: run ```xhost +local:docker``` in terminal to allow GUI apps
 
 ### 1st. Set up API key
